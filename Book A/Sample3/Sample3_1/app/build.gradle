@@ -1,17 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion 32
 
     defaultConfig {
         applicationId "com.bn.Sample3_1"
         minSdkVersion 21
-        targetSdkVersion 28
-        compileOptions {
-            sourceCompatibility JavaVersion.VERSION_1_5
-            targetCompatibility JavaVersion.VERSION_1_5
-        }
+        targetSdkVersion 32
     }
 
     buildTypes {
@@ -20,4 +15,5 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+    namespace 'com.bn.Sample3_1'
 }

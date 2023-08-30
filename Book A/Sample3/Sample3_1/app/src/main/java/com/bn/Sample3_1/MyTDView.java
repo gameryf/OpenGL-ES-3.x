@@ -29,7 +29,7 @@ public class MyTDView extends GLSurfaceView
 			//清除深度缓冲与颜色缓冲
             GLES30.glClear( GLES30.GL_DEPTH_BUFFER_BIT | GLES30.GL_COLOR_BUFFER_BIT);
             //绘制三角形对象
-            tle.drawSelf();    
+            tle.drawSelf();
 		}
 		public void onSurfaceChanged(GL10 gl, int width, int height)
 		{
@@ -45,7 +45,7 @@ public class MyTDView extends GLSurfaceView
 		public void onSurfaceCreated(GL10 gl, EGLConfig config)
 		{
 			//设置屏幕背景色RGBA
-            GLES30.glClearColor(0,0,0,1.0f);  
+            GLES30.glClearColor(0,0,0,1.0f);
             //创建三角形对对象 
             tle=new Triangle(MyTDView.this);        
             //打开深度检测
@@ -65,7 +65,7 @@ public class MyTDView extends GLSurfaceView
 				mRenderer.tle.xAngle=mRenderer.tle.xAngle+ANGLE_SPAN;
 				try
 				{
-					Thread.sleep(20);
+					Thread.sleep(10);
 				}
 				catch(Exception e)
 				{
