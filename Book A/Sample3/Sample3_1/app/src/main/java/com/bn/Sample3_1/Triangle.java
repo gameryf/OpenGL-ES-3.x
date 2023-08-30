@@ -37,7 +37,7 @@ public class Triangle
     {
     	//顶点坐标数据的初始化
         vCount=3;  
-        final float UNIT_SIZE=0.2f;
+        final float UNIT_SIZE=0.25f;
         float[] vertices =new float[]//顶点坐标数组
         {
         	-4*UNIT_SIZE,0,0,
