@@ -38,7 +38,7 @@ public class Triangle
     	//顶点坐标数据的初始化
         vCount=3;  
         final float UNIT_SIZE=0.2f;
-        float vertices[]=new float[]//顶点坐标数组
+        float[] vertices =new float[]//顶点坐标数组
         {
         	-4*UNIT_SIZE,0,0,
         	0,-4*UNIT_SIZE,0,
@@ -51,7 +51,7 @@ public class Triangle
         mVertexBuffer.put(vertices);//在缓冲区内写入数据
         mVertexBuffer.position(0);//设置缓冲区起始位置
         
-        float colors[]=new float[]//顶点颜色数组
+        float[] colors =new float[]//顶点颜色数组
         {
         		1,1,1,0,//白色	
         		0,0,1,0,//蓝
