@@ -44,25 +44,26 @@ public class Triangle
         	0,-4*UNIT_SIZE,0,
         	4*UNIT_SIZE,0,0,
         };
-		
-        ByteBuffer vbb = ByteBuffer.allocateDirect(vertices.length*4);
-        vbb.order(ByteOrder.nativeOrder());//设置字节顺序为本地操作系统顺序
-        mVertexBuffer = vbb.asFloatBuffer();//转换为浮点(Float)型缓冲
-        mVertexBuffer.put(vertices);//在缓冲区内写入数据
-        mVertexBuffer.position(0);//设置缓冲区起始位置
-        
+
+        mVertexBuffer = initBuffer(vertices);
+
         float[] colors =new float[]//顶点颜色数组
         {
         		1,1,1,0,//白色	
         		0,0,1,0,//蓝
         		0,1,0,0//绿
         };
-        
-        ByteBuffer cbb = ByteBuffer.allocateDirect(colors.length*4);
-        cbb.order(ByteOrder.nativeOrder());//设置字节顺序为本地操作系统顺序
-        mColorBuffer = cbb.asFloatBuffer();//转换为浮点(Float)型缓冲
-        mColorBuffer.put(colors);//在缓冲区内写入数据
-        mColorBuffer.position(0);//设置缓冲区起始位置
+
+        mColorBuffer = initBuffer(colors);
+    }
+
+    private FloatBuffer initBuffer(float[] floatMat) {
+        ByteBuffer bb = ByteBuffer.allocateDirect(floatMat.length * 4);
+        bb.order(ByteOrder.nativeOrder());//设置字节顺序为本地操作系统顺序
+        FloatBuffer buffer = bb.asFloatBuffer();//转换为浮点(Float)型缓冲
+        buffer.put(floatMat);//在缓冲区内写入数据
+        buffer.position(0);//设置缓冲区起始位置
+        return buffer;
     }
 
     //初始化着色器的方法
